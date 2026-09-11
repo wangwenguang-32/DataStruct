@@ -94,19 +94,19 @@ void graph_bfs(Graph* graph, void (*visit)(Node* node), Node* node)
 	Node* root = node;
 	if (!node->valid)
 		return;
-	visit(root);
-	arr[root->index] = true;
 	EnQueue(queue, root);
+	arr[root->index] = true;
 	while (!Empty(queue))
 	{
 		Node* n = (Node*)DeQueue(queue);
+		visit(n);
+		
 		for (Node* i = GetFirstNeighbor(graph, n); i != NULL; i = GetNextNeighbor(graph, n, i))
 		{
 			if (!arr[i->index])
 			{
-				visit(i);
-				arr[i->index] = true;
 				EnQueue(queue, i);
+				arr[i->index] = true;
 			}
 		}
 	}
