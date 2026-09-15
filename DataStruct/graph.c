@@ -122,7 +122,7 @@ void graph_dfs(Graph* graph, void(*visit)(Node* node), Node* node)
 	{
 		if (!arr[i->index])
 		{
-			DFS(graph, visit, i);
+			graph_dfs(graph, visit, i);
 		}
 		
 	}

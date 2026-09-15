@@ -22,6 +22,7 @@
     <ClCompile Include="graph.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="queue.c" />
+    <ClCompile Include="sort.c" />
     <ClCompile Include="stack.c" />
     <ClCompile Include="tree.c" />
   </ItemGroup>

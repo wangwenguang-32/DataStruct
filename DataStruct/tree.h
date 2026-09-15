@@ -3,12 +3,14 @@
 
 #include<stdint.h>
 
-typedef struct
+struct BiTree
 {
 	int32_t data;
-	BiTree* left;
-	BiTree* right;
-}BiTree;
+	struct BiTree* left;
+	struct BiTree* right;
+};
+
+typedef struct BiTree BiTree;
 
 
 #endif
