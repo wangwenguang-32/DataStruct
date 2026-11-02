@@ -7,9 +7,13 @@
 BiTree* tree_create()
 {
 	BiTree* root = (BiTree*)malloc(sizeof(BiTree));
-	root->left = NULL;
-	root->left = NULL;
-	return root;
+	if (root != NULL)
+	{
+		root->left = NULL;
+		root->left = NULL;
+		return root;
+	}
+	return NULL;
 }
 
 void preorder(BiTree* root)
@@ -55,5 +59,26 @@ void tree_bfs(BiTree* root)
 		if (node->right != NULL)
 			EnQueue(queue, node->right);
 	}
+}
+
+bool balance = true;
+
+int tree_heigh(BiTree* root)
+{
+	if (root == NULL)
+	{
+		return 0;
+	}
+	int lh = tree_heigh(root->left);
+	int rh = tree_heigh(root->right);
+	if (abs(lh - rh) != 0 && abs(lh - rh) != 1)
+	{
+		balance = false;
+	}
+	if (lh >= rh)
+		return lh + 1;
+	else
+		return rh + 1;
+
 }
 
